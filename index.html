@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上場企業情報・適時開示検索</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-shape-1"></div>
+    <div class="background-shape-2"></div>
+
+    <div class="container">
+        <header>
+            <h1>日本上場企業情報検索</h1>
+            <p class="subtitle">企業名または証券コードで検索し、最新情報を取得します</p>
+        </header>
+
+        <main>
+            <div class="search-container">
+                <div class="history-controls">
+                    <div class="history-select-wrapper">
+                        <button id="history-toggle" class="history-toggle">
+                            <span id="history-label">履歴から選択</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div id="history-list" class="history-list hidden">
+                            <!-- History items will be injected here -->
+                        </div>
+                    </div>
+                    <div class="sort-controls">
+                        <label class="radio-label">
+                            <input type="radio" name="sort-order" value="recent" checked>
+                            <span>検索順</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="sort-order" value="alpha">
+                            <span>あいうえお順</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="企業名 または 証券コード (例: 7203 / トヨタ)">
+                    <button id="search-button" class="btn-search">検索</button>
+                </div>
+                <div id="suggestions-list" class="suggestions-list"></div>
+            </div>
+
+            <div id="result-container" class="result-container hidden">
+                <h2 id="company-name">企業名</h2>
+                <p id="company-code" class="code-badge">Code: 0000</p>
+
+                <div class="info-grid">
+                    <div class="info-card x-card">
+                        <h3><span class="icon">𝕏</span> 最新情報 (X / Twitter)</h3>
+                        <p>Xでの公式情報や関連ニュースをチェックします。</p>
+                        <a id="x-link" href="#" target="_blank" class="btn btn-x">Xで検索結果を表示</a>
+                    </div>
+
+                    <div class="info-card tdnet-card">
+                        <h3><span class="icon">📄</span> 適時開示情報 (TDnet)</h3>
+                        <p>TDnetの適時開示情報検索ページを開きます。</p>
+                        <a id="tdnet-link" href="#" target="_blank" class="btn btn-tdnet">TDnet検索ページへ</a>
+                    </div>
+
+                    <div class="info-card yahoo-card">
+                        <h3><span class="icon">📈</span> Yahoo!ファイナンス</h3>
+                        <p>株価情報や掲示板などの最新情報を確認します。</p>
+                        <a id="yahoo-link" href="#" target="_blank" class="btn btn-yahoo">Yahoo!ファイナンスへ</a>
+                    </div>
+
+                    <div class="info-card google-card">
+                        <h3><span class="icon">🔍</span> Google 検索</h3>
+                        <p>企業名で直接グーグル検索し、最新ニュースを確認します。</p>
+                        <a id="google-link" href="#" target="_blank" class="btn btn-google">Googleで検索</a>
+                    </div>
+                </div>
+
+                <div class="open-all-container">
+                    <button id="btn-open-all" class="btn btn-open-all">
+                        <span class="icon">🚀</span> まとめて開く (X, TDnet, Yahoo)
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Company Info Search. Data provided for demonstration purposes.</p>
+        </footer>
+    </div>
+
+    <script src="companies.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
