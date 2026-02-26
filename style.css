@@ -22,8 +22,9 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    align-items: flex-start; /* Change from center to allow scrolling from top */
+    padding: 2rem 0; /* Add vertical padding for content */
+    overflow-x: hidden; /* Prevent horizontal scroll, allow vertical */
     /* For background shapes */
     position: relative;
 }
@@ -31,7 +32,7 @@ body {
 /* Dynamic Background Shapes */
 .background-shape-1,
 .background-shape-2 {
-    position: absolute;
+    position: fixed; /* Change from absolute to fixed */
     border-radius: 50%;
     filter: blur(100px);
     z-index: -1;
